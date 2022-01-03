@@ -1,4 +1,6 @@
 // Shell.
+#define ANSI_COLOR_RED    "\x1b[31m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 
 #include "types.h"
 #include "user.h"
@@ -10,6 +12,9 @@
 #define PIPE  3
 #define LIST  4
 #define BACK  5
+
+
+
 
 #define MAXARGS 10
 
@@ -133,7 +138,7 @@ runcmd(struct cmd *cmd)
 int
 getcmd(char *buf, int nbuf)
 {
-  printf(2, "$ ");
+  printf(2, ANSI_COLOR_RED "WTH@xv6$ " ANSI_COLOR_RESET);
   memset(buf, 0, nbuf);
   gets(buf, nbuf);
   if(buf[0] == 0) // EOF
