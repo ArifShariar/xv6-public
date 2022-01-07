@@ -84,12 +84,33 @@ stat(const char *n, struct stat *st)
 int
 atoi(const char *s)
 {
-  int n;
+  // int n;
 
-  n = 0;
-  while('0' <= *s && *s <= '9')
-    n = n*10 + *s++ - '0';
-  return n;
+  // n = 0;
+  // while('0' <= *s && *s <= '9')
+  //   n = n*10 + *s++ - '0';
+  // return n;
+
+  int i;
+  int sign;
+  int val;
+ 
+
+  i = 0;
+  sign = 1;
+  val = 0;
+
+  
+  if (s[i] == '-') {
+    sign = -1;
+    i++;
+  }
+
+  while (s[i] >= '0' && s[i] <= '9' && s[i] != '\0') {
+    val = val * 10 + (s[i] - '0');
+    i++;
+  }
+  return val * sign;
 }
 
 void*
