@@ -102,3 +102,10 @@ int sys_incr(void){
   argint(0, &n);
   return n+1;
 }
+
+// implementing decr
+int sys_decr(void){
+  int n;
+  argint(0, &n);
+  return n-1;
+}

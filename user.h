@@ -25,6 +25,7 @@ int sleep(int);
 int uptime(void);
 void shutdown(void);
 int incr(int);
+int decr(int);
 
 
 // ulib.c
